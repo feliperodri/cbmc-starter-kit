@@ -818,7 +818,7 @@ $(LOGDIR)/result.xml: $(HARNESS_GOTO).goto
 $(LOGDIR)/property.xml: $(HARNESS_GOTO).goto
 	$(LITANI) add-job \
 	  --command \
-	    '$(CBMC) $(CBMC_VERBOSITY) $(CBMCFLAGS) $(CHECKFLAGS) --show-properties --xml-ui $<' \
+	    '$(CBMC) $(CBMC_VERBOSITY) $(CBMCFLAGS) $(CBMC_FLAG_UNWINDING_ASSERTIONS) $(CHECKFLAGS) --show-properties --xml-ui $<' \
 	  --inputs $^ \
 	  --outputs $@ \
 	  --ci-stage test \
